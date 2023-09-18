@@ -3,13 +3,15 @@ from flask import Flask
 # config import
 from config import app_config, app_active
 
-config = app_config[app_active]
 def create_app(config_name):
     app = Flask(__name__, template_folder='templates')
+    config_object = app_config[config_name]
 
-    app.secret_key = config.SECRET_KEY
-    app_config.from_object(app_config[config_name])
-    app_config.from_pyfile('config.py')
+    if config_object is None:
+        raise Exception('No configuration found for the current environment.')
+
+    app.secret_key = config_object.SECRET
+    app.config.from_object(config_object)
 
     @app.route('/')
     def index():
