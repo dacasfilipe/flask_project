@@ -7,7 +7,7 @@ from model.Category import Category
 config = app_config[app_active]
 db = SQLAlchemy(config.APP)
 
-class Product(db.model):
+class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), unique=True, nullable=False)
     description = db.Column(db.Text(),nullable=False)
