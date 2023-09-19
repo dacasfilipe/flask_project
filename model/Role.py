@@ -7,4 +7,4 @@ db = SQLAlchemy(config.APP)
 
 class Role(db.model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(40), unique = True, nullable=False)
+    name = db.Column(db.String(40), unique=True, nullable=False)
