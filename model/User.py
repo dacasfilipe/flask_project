@@ -4,7 +4,6 @@ from config import app_config, app_active
 from model.Role import Role
 
 config = app_config[app_active]
-
 db = SQLAlchemy(config.APP)
 
 class User(db.model):
