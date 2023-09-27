@@ -44,6 +44,3 @@ app_config = {
 }
 
 app_active = os.getenv('FLASK_ENV', 'development')  # Default to 'development'
-
-
-app_active = os.getenv('FLASK_ENV')

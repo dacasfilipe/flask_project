@@ -2,7 +2,9 @@
 from flask import Flask
 # config import
 from config import app_config, app_active
+
 config = app_config[app_active]
+
 from flask_sqlalchemy import SQLAlchemy
 
 def create_app(config_name):
