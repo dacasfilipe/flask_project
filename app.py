@@ -28,4 +28,8 @@ def create_app(config_name):
     def index():
         return 'hello world'
 
+
+    @app.route('/login/')
+    def login():
+        return 'Aqui entrará a tela de login'
     return app
